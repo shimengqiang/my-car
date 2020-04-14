@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>pojo</artifactId>
+    <artifactId>common-bi</artifactId>
     <dependencies>
         <dependency>
             <groupId>com.cv.mycar</groupId>
@@ -17,6 +17,5 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>

@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>common</module>
-        <module>pojo</module>
-        <module>user-service</module>
+        <module>common-bi</module>
         <module>api</module>
+        <module>user-service</module>
         <module>web</module>
     </modules>
 
