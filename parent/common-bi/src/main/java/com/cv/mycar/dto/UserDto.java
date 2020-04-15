@@ -9,7 +9,20 @@ import java.util.Date;
  * @Version 1.0
  */
 public class UserDto implements Serializable {
+
+
+
     private Long id;
+
+    private String name;
+
+    private String cardId;
+
+    private String phone;
+
+    private Date createAt;
+
+    private Date lastUpdate;
 
     private String nickname;
 
@@ -24,6 +37,46 @@ public class UserDto implements Serializable {
     private Date lastLoginDate;
 
     private Integer loginCount;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Date getCreateAt() {
+        return createAt;
+    }
+
+    public void setCreateAt(Date createAt) {
+        this.createAt = createAt;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
 
     public Long getId() {
         return id;
