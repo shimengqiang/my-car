@@ -15,7 +15,7 @@ spring:
       initial-size: 2
       max-active: 30
       min-idle: 2
-      max-wait: 1234
+      max-wait: 1000
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 5
       validation-query: select 1
