@@ -3,6 +3,7 @@ package com.cv.mycar;
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @author shimengqiang
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @EnableDubboConfiguration
+@ServletComponentScan("com.cv.mycar.conf.filter")
 public class WebApp {
     public static void main(String[] args) {
         SpringApplication.run(WebApp.class, args);

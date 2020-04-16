@@ -12,4 +12,6 @@ import java.util.List;
 public interface IUserService {
 
     List<UserDto> findAll();
+
+    UserDto findById(Long id);
 }

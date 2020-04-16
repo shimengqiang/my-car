@@ -20,14 +20,14 @@ import java.util.concurrent.*;
  * @Date 2020-04-14-16:54
  * @Version 1.0
  */
-@Service(timeout = 10000)
+@Service(timeout = 20000)
 @Component
 public class IUserServiceImpl implements IUserService {
     @Autowired
     private UsersMapper usersMapper;
     @PostConstruct
     public void test(){
-        System.out.println(usersMapper.selectAll().toString());
+        System.out.println(usersMapper.count());
     }
 
     private static ExecutorService executorService;
@@ -59,7 +59,6 @@ public class IUserServiceImpl implements IUserService {
         for (Future<List<Users>> future : futures) {
             try {
                 List<Users> users = future.get();
-                System.out.println(Thread.currentThread().getName() + " ===== "+users.toString());
                 usersList.addAll(users);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -69,7 +68,8 @@ public class IUserServiceImpl implements IUserService {
                 e.printStackTrace();
             }
         }
-        executorService.shutdown();
+        //不能关
+//        executorService.shutdown();
         List<UserDto> dtoList = new ArrayList<>();
         usersList.forEach(user->{
             UserDto userDto = new UserDto();
@@ -77,6 +77,16 @@ public class IUserServiceImpl implements IUserService {
             dtoList.add(userDto);
         });
         return dtoList;
+    }
+
+    @Override
+    public UserDto findById(Long id) {
+        UserDto dto = new UserDto();
+        Users users = usersMapper.selectByPrimaryKey(id);
+        if (users != null){
+            BeanUtils.copyProperties(users, dto);
+        }
+        return dto;
     }
 }
     
